@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+@import url('https://rsms.me/inter/inter-ui.css');
+body {
+  align-items: center;
+  color: #555;
+  display: flex;
+  font-family: 'Inter UI', sans-serif;
+  font-size: 1.25em;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+.container {
+  display: inline-block;
+  position: relative;
+}
+.index {
+  cursor: pointer;
+  display: inline;
+  margin-right: 30px;
+  padding: 5px;
+  user-select: none;
+  -moz-user-select: none;
+}
+.index:last-child {
+  margin: 0;
+}
+svg {
+  left: -13px;
+  position: absolute;
+  top: -11px;
+  transition: transform 500ms;
+  width: 46px;
+}
+path {
+  fill:none;
+  stroke:#2FB468;
+  stroke-dasharray: 150 150;
+  stroke-width:15;
+}
+.container.open:not(.flip) path {
+  animation: OpenRight 500ms;
+}
+.container.open.flip path {
+  animation: OpenLeft 500ms;
+}
+.container.i1 svg {
+  transform: translateX(0);
+}
+.container.i2 svg {
+  transform: translateX(50px);
+}
+.container.i3 svg {
+  transform: translateX(102px);
+}
+.container.i4 svg {
+  transform: translateX(154px);
+}
+.container.i5 svg {
+  transform: translateX(206px);
+}
+@keyframes OpenRight {
+  25% { stroke-dasharray: 100 150; }
+  60% { stroke-dasharray: 100 150; }
+  100% { stroke-dasharray: 150 150; }
+}
+@keyframes OpenLeft {
+  25% { stroke-dashoffset: -50px; }
+  60% { stroke-dashoffset: -50px; }
+  100% { stroke-dashoffset: 0; }
+}    </style>
+
+<script>
+const c = document.querySelector('.container')
+const indexs = Array.from(document.querySelectorAll('.index'))
+let cur = -1
+indexs.forEach((index, i) => {
+  index.addEventListener('click', (e) => {
+    // clear
+    c.className = 'container'
+    void c.offsetWidth; // Reflow
+    c.classList.add('open')
+    c.classList.add(`i${i + 1}`)
+    if (cur > i) {
+      c.classList.add('flip')
+    }
+    cur = i
+  })
+})
+</script>
+
+<body>
+
+<div class="container">
+
+<h1>Responsive Magic Line Pagination</h1>
+<!-- Go ahead and squeeze me! -->
+<body>
+  <div class="container">
+    <span><div class="index">1</div>
+        <div class="index">2</div>
+        <div class="index">3</div>
+        <div class="index">4</div>
+        <div class="index">5</div></span>
+    <svg viewBox="0 0 100 100">
+      <path
+            d="m 7.1428558,49.999998 c -1e-7,-23.669348 19.1877962,-42.8571447 42.8571442,-42.8571446 23.669347,0 42.857144,19.1877966 42.857144,42.8571446" />
+    </svg>
+    <svg viewBox="0 0 100 100">
+      <path
+            d="m 7.1428558,49.999998 c -1e-7,23.669347 19.1877962,42.857144 42.8571442,42.857144 23.669347,0 42.857144,-19.187797 42.857144,-42.857144" />
+    </svg>
+  </div>
+</body>
+</html>

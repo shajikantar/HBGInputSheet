@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<body style="background-color:#D7DBDD">
+    <form id="mainform" action="/MainPage/" method="POST">
+
+            <table style="background-color:#2f353d;width:100%;margin-left:0%">
+                <tr><td style="border:5px;">
+                    <h1 style="font-size:25px;font-weight:bold;color:white"> &nbsp&nbsp&nbsp&nbspHBG </h1> <br> <h2 style="margin-top:-10%;font-size:25px;font-weight:bold;color:#82E0AA;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspInputsheet</h2></td>
+                    <td style="border:0px;"><input type="Submit" value = "Generate and Save Excel File" class="btn btn-primary" style="margin-left:60%;background-color:#1ABC9C;width:220px"></td>
+                    <td style="border:0px;"><button class="btn" style="margin-left:40%;background-color:#1ABC9C;width:190px;color:white"  onclick="window.location.href = 'http://localhost:8000/'"><i class="fa fa-home"></i>      Back to Home Page</button></td>
+
+             <tr><td style="border:0px;"></td>
+            </tr></table>
+
+        <div class="navbarX" style="width:100%;padding:5px">
+            <div class="subnavX">
+                    <button class="subnavbtn" > Project Info &nbsp&nbsp  <i class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content" style="margin-left:5px">
+                    <a data-toggle="pill" href="#ProjectSettings"">Project Settings</a>
+                    <a data-toggle="pill" href="#ProjectTextReplacement"">Project Level Replacement</a>
+                    {{ value.3 }}</div>
+           </div>
+              <a disabled data-toggle="pill" href="#qdb{{ value.0 }}" style="text-decoration: {{ value.1 }}">Qdb </a>
+
+      {% for key, value in menulist.items %}
+        {% if key == 1 %}
+              <a data-toggle="pill" href="#additional_Project_Settings{{ value.0 }}" style="text-decoration: {{ value.1 }}">Additional Settings</a>
+        {% elif key == 2 %}
+              <a data-toggle="pill" href="#brands{{ value.0 }}" style="text-decoration: {{ value.1 }}">Brands</a>
+        {% elif key == 3 %}
+              <div class="subnavX">
+                <button class="subnavbtn" style="text-decoration: {{ value.1 }}">Comms&nbsp&nbsp<i class="fa fa-caret-down"></i></button>
+                <div class="subnav-content" style="margin-left:20%">
+                  <a data-toggle="pill" href="#Comms_Amp{{ value.0 }}" style="text-decoration: {{ value.1 }}">Comms AMP</a>
+                  <a data-toggle="pill" href="#Comms_brand_fluency{{ value.0 }}" style="text-decoration: {{ value.1 }}">Comms_BrandFluency</a>
+                </div>
+              </div>
+        {% elif key == 4 %}
+             <div class="subnavX">
+                <button class="subnavbtn" style="text-decoration: {{ value.1 }}">Adnow &nbsp&nbsp <i class="fa fa-caret-down"></i></button>
+                <div class="subnav-content" style="margin-left:20%">
+                  <a data-toggle="pill" href="#AdMessaging{{ value.0 }}" style="text-decoration: {{ value.1 }}">Ad Messaging</a>
+                  <a data-toggle="pill" href="#adnow_ads{{ value.0 }}" style="text-decoration: {{ value.1 }}">Adnow Ads</a>
+                  <a data-toggle="pill" href="#adnow_fmcg{{ value.0 }}" style="text-decoration: {{ value.1 }}">Adnow FMCG</a>
+                  <a data-toggle="pill" href="#adnow_longterm{{ value.0 }}" style="text-decoration: {{ value.1 }}">Adnow Long term</a>
+                  <a data-toggle="pill" href="#adnow_other{{ value.0 }}" style="text-decoration: {{ value.1 }}">Adnow other</a>
+                </div>
+              </div>
+
+
+        {% elif key == 5 %}
+
+                  <div class="subnavX">
+                    <button class="subnavbtn" style="text-decoration: {{ value.1 }}">CrossMedia&nbsp&nbsp<i class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content" style="margin-left:25%">
+                      <a data-toggle="pill" href="#crossmedia_regions{{ value.0 }}" style="text-decoration: {{ value.1 }}">CrossMedia A Regions</a>
+                      <a data-toggle="pill" href="#crossmedia_b{{ value.0 }}" style="text-decoration: {{ value.1 }}">CrossMedia B Campaign Builder</a>
+                      <a data-toggle="pill" href="#crossmedia_C{{ value.0 }}" style="text-decoration: {{ value.1 }}">CrossMedia C Campaign</a>
+                    </div>
+                  </div>
+        {% elif key == 6 %}
+                  <div class="subnavX">
+                    <button class="subnavbtn" style="text-decoration: {{ value.1 }}">Det&nbsp&nbsp<i class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content" style="margin-left:45%">
+                      <a data-toggle="pill" href="#Det_Apps{{ value.0 }}" style="text-decoration: {{ value.1 }}">Det Apps</a>
+                      <a data-toggle="pill" href="#Det_DP{{ value.0 }}" style="text-decoration: {{ value.1 }}">>Det DP</a>
+                    </div>
+                  </div>
+          {% elif key == 7 %}
+
+                  <div class="subnavX">
+                    <button class="subnavbtn" style="text-decoration: {{ value.1 }}">NeedScope&nbsp&nbsp<i class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content" style="margin-left:43%">
+                      <a data-toggle="pill" href="#link1{{ value.0 }}" style="text-decoration: {{ value.1 }}">NeedScope Attributes</a>
+                      <a data-toggle="pill" href="#link2{{ value.0 }}" style="text-decoration: {{ value.1 }}">NeedScope Collages</a>
+                      <a data-toggle="pill" href="#Needscope_DP{{ value.0 }}" style="text-decoration: {{ value.1 }}">NeedScope DP</a>
+                    </div>
+                  </div>
+
+        {% elif key == 8 %}
+
+
+                  <div class="subnavX">
+                    <button class="subnavbtn" style="text-decoration: {{ value.1 }}">Quota&nbsp&nbsp<i class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content" style="margin-left:50%">
+                      <a data-toggle="pill" href="#link1{{ value.0 }}" style="text-decoration: {{ value.1 }}">Quota A Variables</a>
+                      <a data-toggle="pill" href="#link2{{ value.0 }}" style="text-decoration: {{ value.1 }}">Quota A Variables</a>
+                      <a data-toggle="pill" href="#link2{{ value.0 }}" style="text-decoration: {{ value.1 }}">Quota C Tables</a>
+                      <a data-toggle="pill" href="#link2{{ value.0 }}" style="text-decoration: {{ value.1 }}">Quota D Main</a>
+                    </div>
+                  </div>
+        {% elif key == 9 %}
+					<a data-toggle="pill" href="#agebands{{ value.0 }}" style="text-decoration: {{ value.1 }}">AgeBands</a>
+         {% elif key == 10 %}
+        			<a data-toggle="pill" href="#menu2{{ value.0 }}" style="text-decoration: {{ value.1 }}">IA_TARGET_WORDS</a>
+        {% elif key == 11 %}
+					<a data-toggle="pill" href="#Imagery{{ value.0 }}" style="text-decoration: {{ value.1 }}">Imagery</a>
+         {% elif key == 12 %}
+                    <a data-toggle="pill" href="#menu2{{ value.0 }}" style="text-decoration: {{ value.1 }}">TBCA</a>
+
+              <div class="subnavX">
+                <button class="subnavbtn">Others&nbsp&nbsp<i class="fa fa-caret-down"></i></button>
+                <div class="subnav-content" style="margin-left:60%">
+         {% elif key == 13 %}
+                  <a data-toggle="pill" href="#menu2{{ value.0 }}" style="text-decoration: {{ value.1 }}" >ConnectFilterVariables</a>
+         {% elif key == 14 %}
+                  <a data-toggle="pill" href="#menu2{{ value.0 }}" style="text-decoration: {{ value.1 }}">COMPETITOR_BRANDS</a>
+         {% elif key == 15 %}
+                  <a data-toggle="pill"  href="#menu2{{ value.0 }}" style="text-decoration: {{ value.1 }}">Brands_SelfCoding</a>
+         {% elif key == 16 %}
+                  <a data-toggle="pill"  href="#menu2{{ value.0 }}" style="text-decoration: {{ value.1 }}">MarketFactors</a>
+
+                </div>
+              </div>
+        </div>
+      {% endif %}
+   {% endfor %}
+
+            <div class="tab-content">
+			  {% include "Project_Settings_V1.html" %}
+			  {% include "ProjectTextReplacement.html" %}
+ 			  {% include "Qdb_tabs_v1.html" %}
+			  {% include "additional_project_settings.html" %}
+      		  {% include "brands.html" %}
+		      {% include "Comms_AMP.html" %}
+              {% include "Comms_brand_fluency.html" %}
+              {% include "Needscope_DP.html" %}
+              {% include "CrossMedia_Regions.html" %}
+              {% include "CrossMedia_B.html" %}
+              {% include "CrossMedia_C.html" %}
+              {% include "adnow_fmcg.html" %}
+              {% include "adnow_longterm.html" %}
+              {% include "adnow_other.html" %}
+ 	          {% include "AdMessaging.html" %}
+              {% include "adnow_ads.html" %}
+              {% include "agebands.html" %}
+              {% include "Det_Apps.html" %}
+              {% include "Det_DP.html" %}
+
+                <div id="menu2" class="tab-pane fade" style="width:1000px;margin-top:3%;margin-left:240px;">
+                        <h1>Not Developed Yet</h1>
+                       <h2>Work in Progress.........</h2>
+               </div>
+        </div>
+</body>
+
+
+    <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.navbarX {
+  overflow: hidden;
+  background-color: #008000;
+  border-radius:0px;
+}
+
+.navbarX a {
+  float: left;
+  font-size: 12px;
+  color: white;
+  text-align: center;
+  padding: 8px 14px;
+  text-decoration: none;border-radius:10px;
+
+}
+
+.subnavX {
+  float: left;
+  font-size: 12px;
+  overflow: hidden;
+  margin-left:1%;
+  background-color: #008000;
+  width:max-content;border-radius:10px;
+}
+
+.subnavX .subnavbtn {
+  font-size: 16px;
+  border: none;
+ font-size: 12px;
+   outline: none;
+  color: white;
+  padding: 8px 15px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbarX a:hover, .subnav:hover .subnavbtn {
+  background-color: white;
+  color:black;
+  border-radius:10px;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  margin-top:.5px;
+  left: 0;
+  background-color: #008000;
+  width:fit-content;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #F5B041;
+  color: black;
+}
+
+.subnavX:hover .subnav-content {
+  display: block;
+                select{
+                        font-family: Arial;
+                        font-size: 10px;
+                        padding: 1px 1px;
+                        margin: 5px;
+                        width: 10%;
+                        border-radius: 10px;
+                        background-color:#F8F9F9;
+                          padding: 1px;
+                            box-shadow: 1px 1px black;
+                        }
+
+                        .nav a:hover {
+                          border-bottom: 3px solid red;
+                        }
+
+                        .nav a.active {
+                          border-bottom: 3px solid red;
+                        }
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1em;
+    color: #999;
+}
+
+a, a:hover, a:focus {
+    color: white;
+    border:2px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 1px 1px;
+    background: black;
+    border: 12px;
+    border-radius: 1;
+    margin-bottom: 1px;
+    box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 100px;
+    width: 220px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom:5px;
+    background: #3b5998;
+    color: #fff;
+    border: 0px;
+    font-size:11px;
+    transition: all 0.2s;
+}
+
+#sidebar.active {
+    margin-left: 1px;
+    border : 8px;
+     border-bottom: 3px solid red;
+                        }
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #10a1b7;
+}
+
+#sidebar ul.components {
+    padding: 1px 0;
+    border-bottom: 5px 10px solid #47748b;
+    margin-bottom:5px;
+}
+
+#sidebar ul li a {
+    padding: 8px;
+    font-size: 11px;
+    display: block;
+    border: 0px;
+ 	-o-border-radius: 1px;
+	-moz-border-radius: 1px;
+	-ms-border-radius: 1px;
+	-webkit-border-radius: 1px;
+	border-radius: 5px;
+    box-shadow: 10 px black;
+
+}
+#sidebar ul li a:hover {
+    color: White;
+    font-weight:bold;
+    font-style:Italic;
+    font-size: 18px;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: white;
+    font-size: 25px;
+    background-color:black;
+}
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+    content: '\e259';
+    display: block;
+    position: absolute;
+    right: 20px;
+    font-family: 'Glyphicons Halflings';
+    font-size: 1 em;
+    color:white
+}
+a[aria-expanded="true"]::before {
+    content: '\e260';
+}
+
+
+ul ul a {
+    font-size: 11px !important;
+    padding-left: 30px !important;
+    background: #5499C7;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article, a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    padding: 20px;
+    width:!00px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+nav{
+	padding:1%;
+	margin:0 auto
+	margin-left:5%;
+	width:1830px;
+	}
+
+.menu {
+	height:175px;
+	position:relative;
+	width:1500px;
+	}
+.menu ul {
+	padding:0;
+	margin:0;
+	list-style:none;
+	width:180px;
+	float:left;
+    font-size:11px;
+	}
+.menu ul ul {
+	position:absolute;
+	z-index:-1;
+	-webkit-transition: 0.05s;
+	-moz-transition: 0.05s;
+	-ms-transition: 0.05s;
+	-o-transition: 0.05s;
+	transition: 0.05s;
+	transition-delay: 0.05s;
+	-o-transition-delay: 0.05s;
+	-moz-transition-delay: 0.05s;
+	-ms-transition-delay: 0.05s;
+	-webkit-transition-delay: 0.05s;
+	font-size:11px;
+	}
+
+.menu ul li a {
+	display:block;
+	width:179px;
+	height:29px;
+	padding-left:10px;
+	background:#10a1b7;
+	font:normal 12px/29px arial, sans-serif;
+	color:White;
+	text-decoration:none;
+	margin-bottom:1px;
+	margin-right:1px;
+	-o-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	font-size:11px;
+	}
+
+.menu ul ul ul {
+	position:absolute;
+	left:150px;
+	top:2px;
+	}
+.menu ul li {
+	float:left;
+	width:1250px;
+	position:relative;
+	z-index:10;
+	-webkit-transition: 0.25s;
+	-moz-transition: 0.25s;
+	-ms-transition: 0.25s;
+	-o-transition: 0.25s;
+	}
+.menu ul ul li {
+	transition-delay: .05s;
+	-o-transition-delay: .05s;
+	-moz-transition-delay: .05s;
+	-ms-transition-delay: .05s;
+	-webkit-transition-delay: .05s;
+	font-size:11px;
+	}
+.menu ul ul ul li {
+	transition-delay: 0.5s;
+	-o-transition-delay: 0.5s;
+	-moz-transition-delay: 0.5s;
+	-ms-transition-delay: 0.5s;
+	-webkit-transition-delay: 0.5s;
+	}
+.menu ul li:hover > a {
+	background:black;
+	color:#0489B1;
+
+	}
+.menu ul li:hover > a.fly {
+	color:#000;
+
+	#background:#10a1b7 url(data:image/gif;base64,R0lGODlhFAAJAIAAAGdnZ////yH5BAEHAAEALAAAAAAUAAkAAAIdDI4Qy73qTHRQvtmq1VMljzEaxEXVGV5m+nxlVAAAOw==) no-repeat right center;
+	background-color:#2874A6;
+	}
+.menu ul ul li {
+	margin-top:-30px;
+	}
+.menu ul ul li.p1 {
+	margin-top:0;
+	}
+.menu ul ul ul {
+	margin-left:-150px;
+	}
+.menu ul li:hover > ul > li {
+	margin-top:0;
+	transition-delay: 0.05s;
+	-o-transition-delay: 0.05s;
+	-moz-transition-delay: 0.05s;
+	-ms-transition-delay: 0.05s;
+	-webkit-transition-delay: 0.05s;
+	font-weight:bold;
+	background-color:black;
+	}
+.menu ul ul li:hover > ul {
+	margin-left:0;
+	transition-delay: 0s;
+	-o-transition-delay: 0s;
+	-moz-transition-delay: 0s;
+	-ms-transition-delay: 0s;
+	-webkit-transition-delay: 0s;
+	background-color:black;
+	}
+ .menu ul li.close {
+ 	margin-top:-30px;
+ 	z-index:-1;
+ 	}
+.form-style-9{
+	max-width: 1150px;
+	background: #A9DFBF;
+	padding: 90px;
+	margin: 50px auto;
+	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+	border-radius: 50px;
+	border: 2px solid #305A72;
+	margin-left :100px;
+}
+.form-style-9 ul{
+	padding:0;
+	margin:0;
+	list-style:none;
+
+}
+.form-style-9 ul li{
+	display: block;
+	margin-bottom: 10px;
+	min-height: 3px;
+}
+.form-style-9 ul li  .field-style{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 4px;
+	outline: none;
+	border: 1px solid #B0CFE0;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+
+}.form-style-9 ul li  .field-style:focus{
+	box-shadow: 0 0 5px #B0CFE0;
+	border:1px solid #B0CFE0;
+}
+.form-style-9 ul li .field-split{
+	width: 49%;
+}
+.form-style-9 ul li .field-full{
+	width: 30%;
+}
+.form-style-9 ul li input.align-left{
+	float:left;
+}
+.form-style-9 ul li input.align-right{
+	float:left;
+}
+.form-style-9 ul li textarea{
+	width: 40%;
+	height: 80px;
+}
+.form-style-9 ul li input[type="button"],
+.form-style-9 ul li input[type="submit"] {
+	-moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+	box-shadow: inset 0px 1px 0px 0px #3985B1;
+	background-color: #216288;
+	border: 1px solid #17445E;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	padding: 8px 8px;
+	text-decoration: none;
+	font: 17px Arial, Helvetica, sans-serif;
+}
+
+.form-style-9 ul li input[type="button"]:hover,
+.form-style-9 ul li input[type="submit"]:hover {
+	background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+	background-color: #28739E;
+}
+
+
+.form-style-9 ul li input[type="text"]:hover {
+	background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+	background-color: black;
+}
+
+.box {
+  background-color: black;
+  color: black;
+  border-radius: 15px;
+  padding: 20px;
+  font-size: 100%;
+}
+
+                table {
+                    width: 1030px;
+                    border-collapse: collapse;
+                    border-color: white;
+                    margin-left:16%;
+                    padding: 1px;
+                    }
+                th {
+                    color: dark blue;
+                    font-weight: bold;
+                    background-color: #AED6F1;
+                    font-size: 13px;
+                    }
+
+                td {
+                    padding: 0px;
+                    border: 1px solid #ccc;
+                    text-align: left;
+                    font-size: 14px;
+                    height:8px;
+                    }
+
+                .labels tr td {
+                    background-color: #B3B6B7;
+                    font-weight: bold;
+                    color: #fff;
+                }
+
+                .button {
+                  display: inline-block;
+                  padding: 10px 15px;
+                  font-size: 15px;
+                  cursor: pointer;
+                  text-align: center;
+                  text-decoration: none;
+                  outline: none;
+                  color: #fff;
+                  background-color: #4CAF50;
+                  border: none;
+                  border-radius: 15px;
+                  box-shadow: 0 9px #999;
+                }
+
+                .button:hover {background-color: #3e8e41}
+
+                .button:active {
+                  background-color: #3e8e41;
+                  box-shadow: 0 5px #666;
+                  transform: translateY(4px);
+                }
+
+
+                .formstyle{
+                      background: #5499C7;
+                      border-left: 4px solid #000;
+                      border-top: 1px solid #000;
+                      border-right: 1px  solid #000;
+                      border-bottom: 1px  solid #000;
+                                }
+                .labelAD{
+                    font-family: sans-serif;
+                    font-size: 13px;
+                    padding: 1px 1px;
+                    margin: 1px;
+                    font-weight: bold;
+                    color:black;
+                    margin-left:1%;
+                }
+
+				.menu ul li a{
+					background-color:black;
+				}
+                select{
+                        font-family: Arial;
+                        font-size: 10px;
+                        padding: 1px 1px;
+                        margin: 5px;
+                        width: 10%;
+                        border-radius: 10px;
+                        background-color:#F8F9F9;
+                          padding: 1px;
+                            box-shadow: 1px 1px black;
+                        }
+
+                        .pagination {
+                          display: inline-block;
+                          position:center;
+                          background-color:#F39C12;
+                          border-radius: 10px;
+                        }
+
+                        .pagination a {
+                          color: black;
+                          float: left;
+                          padding: 8px 16px;
+                          text-decoration: none;
+                        }
+
+                        .pagination a.active {
+                          background-color: black;
+                          color: white;
+                          border-radius: 5px;
+                        }
+
+                        .pagination a:hover:not(.active) {
+                          background-color: black;
+                          color:white;
+                          border-radius: 5px;
+                        }
+
+}
+</style>
+
+</html>

@@ -1,0 +1,55 @@
+ <div id="agebands" class="tab-pane" style="margin-left:0%;margin-top:3%;">
+     <div style="background-color:white;width:940px;margin-left:20%;height:540px;padding: 10px;border: 2px solid #305A72;box-shadow: 1px 1px 15px black">
+	    <h3 style="margin-left:10%">Age Bands</h3>
+        <table style="width:650px;margin-left:40px;border:0px">
+			<thead>
+            	  <tr>
+					<th style="width:50px;font-size:16px"> &nbspIndex</th>
+					<th style="width:440px;font-size:16px" colspan="4"><center>Standard Labels and it's attributes (if any)</th>
+					<th style="width:200px;font-size:16px" colspan="2"><center>Label to be shown in the script for each language</th>
+         		  </tr>
+				  <tr>
+					<th style="width:50px;font-size:14px"> &nbsp#</th>
+					<th style="width:150px;font-size:14px" colspan="1"><center>Type in - English Default<br> Default</th>
+					<th style="width:60px;font-size:14px" colspan="1"><center>Minimum</th>
+                    <th style="width:60px;font-size:14px" colspan="1"><center>Maximum</th>
+                    <th style="width:100px;font-size:14px" colspan="1"><center>Screenout</th>
+                    <th style="width:180px;font-size:14px" colspan="1"><center>English <br>  (United Kingdom)</th>
+                    <th style="width:180px;font-size:14px" colspan="1"><input style="background-color:#AED6F1;border:0px;width:160px;font-size:14px" disabled type="text" id="ab_lang"></center></th>
+         		  </tr>
+			</thead>
+               {% for i in "123456789" %}
+    			  <tr><td><input type="text" name="AB_Sn_No_{{ i}}" class="BoxField_{{ i}}"  value = {{ i }} style="width:50px" </td>
+                      <td><select title="Age Bands" id="ab_ab1" name="ab_ab1" class="form-input" style="width: 150px;padding: 4px;">
+							{% for cntry in agebands %}
+								<option value={{ cntry }}>{{ cntry }}</option>
+							{% endfor %}
+						</select></td>
+
+                      <td><input type="number" style="width:60px" min="10" max="100" name="ab_min_{{ i}}" class="BoxField"  placeholder=""</td>
+                      <td><input type="number" min="10" max="100"  style="width:60px" name="ab_max_{{ i}}" class="BoxField"  placeholder=""</td>
+
+                      <td><select title="Age Bands" id="ab_ab1" name="ab_ab1" class="form-input" style="width: 100px;padding: 4px;">
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+						</select></td>
+
+                      <td><input type="text" style="width:180px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""</td>
+                      <td><input type="text" style="width:180px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""</td>
+                  </tr>
+               {% endfor %}
+           </table><br>
+
+				<div class="pagination-wrapper" style="margin-top:3%">
+			  <center><div class="pagination">
+				<a data-toggle="pill"  href="#adnow_ads">&laquo;</a>
+				<a data-toggle="pill"  href="#AdMessaging">7</a>
+				<a data-toggle="pill"  class="active" style="font-size:28px;width:40px;margin-top:-10px;margin-bottom:-10px" href="#agebands">8</a>
+				<a data-toggle="pill"  href="#menu2">9</a>
+				<a data-toggle="pill"  href="#menu2">10</a>
+				<a data-toggle="pill"  href="#menu2">11</a>
+				<a data-toggle="pill"  href="#menu2">12</a>
+			   <a data-toggle="pill"   href="#menu2">&raquo;</a>
+			  </center></div>
+ </div>
+ 	</div>

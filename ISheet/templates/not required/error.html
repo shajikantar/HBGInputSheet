@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3> Validation Errors - (Dummy Values)</h3>
+
+<table style="background-color:#616A6B;color:white;border:1px ;BORDERCOLOR:white" border="1">
+<th colspan="3">Error No</th>
+<th colspan="3">Error Description</th>
+
+    <p> Form Values</p>
+
+    {% for x,y in Val.items  %}
+        <tr>
+        <td colspan="3">  {{ x }} </td>
+        <td colspan="3">  {{ y }} </td>
+    </tr>
+{% endfor %}
+
+</table>
+</body>
+</html>

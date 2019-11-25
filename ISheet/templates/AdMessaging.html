@@ -1,0 +1,48 @@
+
+ <div id="AdMessaging" class="tab-pane fade" style="margin-left:1%;margin-top:1%;">
+     <div style="background-color:white;width:1240px;margin-left:10%;height:610px;padding: 10px;border: 2px solid #305A72;box-shadow: 1px 1px 15px black">
+        <h3 style="margin-left:10%">Ad Messaging Statements : Minimum  2 - Maximum 15 statements</h3>
+        <table style="width:1150px;margin-left:40px;border:1px">
+			<thead>
+            	  <tr>
+					<th style="width:50px;height:40px;font-size:15px"> &nbspIndex</th>
+					<th style="width:440px;font-size:16px" colspan="4"><center>Standard Labels and it's attributes (if any)</th>
+					<th style="width:200px;font-size:16px" colspan="2"><center>Label to be shown in the script for each language</th>
+         		  </tr>
+				  <tr>
+					<th style="width:50px;height:40px;font-size:12px"> &nbsp#</th>
+					<th style="width:180px;font-size:12px" colspan="1"><center> Type in - English <br> Default</th>
+					<th style="width:180px;font-size:12px" colspan="1"><center>Needs/occasions or <br> brand/category <br> benefit/association</th>
+                    <th style="width:180px;font-size:12px" colspan="1"><center>Dashboard label for statement <br>(Limit 50 characters)</th>
+                    <th style="width:180px;font-size:12px" colspan="1"><center>Brand <br> Associated</th>
+                    <th style="width:180px;font-size:12px" colspan="1"><center>English <br>  (United Kingdom)</th>
+                    <th  colspan="1"><center><input style="background-color:#AED6F1;border:0px;width:160px;font-size:14px" disabled type="text" id="ad_lang2" ></center></th>
+
+         		  </tr>
+			</thead>
+               {% for i in brandno %}
+            	  <tr>
+                      <td><input type="text" name="Sn_No_{{ i}}" class="BoxField_{{ i}}"  value = {{ i }} style="width:50px" DISABLED> </td>
+                      <td><input type="text" style="width:180px" id="Brand_{{ i}}" name="Brand_{{ i}}" class="BrandField"> </td>
+                      <td><input type="text" style="width:180px" name="Q00_58_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:180px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:180px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:180px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:180px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                  </tr>
+               {% endfor %}
+           </table><br><br>
+
+				<div class="pagination-wrapper" style="margin-top:0%">
+			  <center><div class="pagination">
+				<a data-toggle="pill"  href="#adnow_ads">&laquo;</a>
+				<a data-toggle="pill"  class="active" style="font-size:28px;width:40px;margin-top:-10px;margin-bottom:-10px" href="#AdMessaging">7</a>
+				<a data-toggle="pill"  href="#agebands">8</a>
+				<a data-toggle="pill"  href="#menu2">9</a>
+				<a data-toggle="pill"  href="#menu2">10</a>
+				<a data-toggle="pill"  href="#menu2">11</a>
+				<a data-toggle="pill"  href="#menu2">12</a>
+			   <a data-toggle="pill"   href="#menu2">&raquo;</a>
+			  </center></div>
+ </div>
+ </div>

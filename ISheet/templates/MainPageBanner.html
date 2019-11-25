@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HBG </title>
+
+    <!-- Google Font -->
+  <!--  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
+   <!-- <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600,700&display=swap" rel="stylesheet">
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/destinations.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/news.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/destinations_responsive.css' %}" type="text/css" >
+
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container-fluid">
+            <div class="inner-header">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10">
+                        <nav class="main-menu mobile-menu">
+                            <ul>
+                                <li><a class="active" href="http://127.0.0.1:8000">Home</a></li>
+                                <li><a href="http://127.0.0.1:8000/PageSelection">InputSheet</a></li>
+                                <li><a href="http://127.0.0.1:8000/adnow">Documents</a></li>
+                                <li><a href="./Work Instruction Manuals.html">Work Instruction Manuals</a></li>
+                                <li><a href="http://127.0.0.1:8000/contacts">Contacts for HBG</a></li>
+                                <li class="search-btn search-trigger"><i class="fa fa-search"></i></li>
+                            </ul>
+                        </nav>
+                        <div id="mobile-menu-wrap"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+  {% block content %}
+
+  {% endblock %}
+
+    <!-- Header End -->
+    <!-- Hero Section Begin -->
+    <!-- Js Plugins -->
+
+    <script src="{% static '/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static '/js/popper.js' %}"></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/circle-progress.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/destinations.js' %}"> </script>
+    <script src="{% static '/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/js/owl.carousel.js' %}"></script>
+    <script src="{% static '/js/easing.js' %}"></script>
+    <script src="{% static '/js/isotope.pkgd.min.js' %}"></script>
+
+</body>
+
+</html>

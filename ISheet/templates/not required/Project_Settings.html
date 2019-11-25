@@ -1,0 +1,154 @@
+<!-- {% for country in country_list %}
+    <option name="{{country}}">{{country|title}}</option>
+{% endfor %}
+--!>
+
+<br xmlns="http://www.w3.org/1999/html">
+    <div id="ProjectSettings" class="tab-pane">
+     <form action="/Inputsheet/" method="POST" id="adnow" name="adnow" action="" style="background-color:#1ABC9C;height:520px;width:1400px;margin-left:1%;margin-top:-7%">
+		 {% csrf_token %}
+		 <center><legend class="legend" style="font-style:italic;font-weight:bold;color:white;margin-left:1%"><h1 style="color:white">Entry Details for ADNOW.... </h1></legend></center><br>
+			<label for="Cntry_name" class="labelAD" style="font-size:14px">Country Name</label>
+			<select id="cname" name=" {{ form.pd_country}} " style="width: 250px;padding: 4px;" required>
+				{% for cntry in CountryList %}
+					<option value="{{ cntry }}">{{ cntry }}</option>
+				{% endfor %}
+	        </select>
+
+			<label for="Methodology" class="labelAD">Methodology</label>
+			<select id="method" name="method" class="form-input" style="width: 180px;padding: 4px;">
+				{% for Methodol in Methodology %}
+				<option value="">{{ Methodol }}</option>
+				{% endfor %}
+			</select><br><br>
+
+			<label for="PlatMethodology" class="labelAD">PlatForm for Methodology</label>
+			<select id="pmethod" name="pmethod" class="form-input" style="width: 180px;padding: 4px;">
+				{% for PlatformV in PlatformVal %}
+				<option value="">{{ PlatformV }}</option>
+				{% endfor %}
+			</select>
+
+			<label for="birth_date" class="labelAD">Fieldwork Start Date (yyyyWeekno)</label>
+			<input type="text" name="birth_date" id="birth_date" placeholder="MM-DD-YYYY"><br>
+		<br>
+
+
+			<label for="SL1" class="labelAD">Configuration</label>
+			<select id="config" name="config" class="form-input" style="width: 220px;padding: 4px;" required>
+				<option value="Focused">Focused (Updated Evoked)</option>
+				<option value="AT">ABS Traditional</option>
+				<option value="AE">ABS Enhanced</option>
+				<option value="AAA">Ask all aware</option>
+				<option value="ES">Evoked Set (DO NOT USE)</option>
+			</select>
+
+			<label for="ER" class="labelAD">Equity Routing</label>
+			<select id="equity" name="config" class="form-input" style="width: 250px;padding: 4px;" required>
+				<option value="Equity">No Equity</option>
+				<option value="SP">Streamlined Power</option>
+				<option value="MDPM">Multi-dimensional Power & MDS</option>
+				<option value="MDPMP">Multi-dimensional Power & MDS + Premium  </option>
+			</select>
+
+
+			<label for="ABS" class="labelAD">ABS Brands Selected</label>
+			<select id="abs" name="config" class="form-input" style="width: 150px;padding: 4px;" required>
+				<option value="MDPM">NA</option>
+				<option value="MDPMP">12</option>
+			</select>
+
+
+		   <fieldset class="FS1"><legend class="legend" style="font-style:italic;font-weight:bold;color:white;margin-left:1%">Survey Language 1</legend>
+			<label for="SL1" class="labelAD">Survey Language 1</label>
+			<select id="sl1name" name="sl1name" class="form-input" style="width: 150px;padding: 4px;" required>
+				{% for SList in SlList %}
+				<option value="">{{ SList }}</option>
+				{% endfor %}
+			</select>
+
+			<label for="SL2" class="labelAD">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSurvey Language 2</label>
+			<select id="sl2name" name="sl2name" class="form-input" style="width: 150px;padding: 4px;">
+				{% for SList in SlList %}
+				<option value="">{{ SList }}</option>
+				{% endfor %}
+			</select>
+
+			<label for="SL3" class="labelAD">Survey Language 3</label>
+			<select id="sl3name" name="sl3name" class="form-input" style="width: 150px;padding: 4px;">
+				{% for SList in SlList %}
+				<option value="">{{ SList }}</option>
+				{% endfor %}
+			</select>
+
+			<label for="SL4" class="labelAD">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSurvey Language 4</label>
+			<select id="sl4name" name="sl4name" class="form-input" style="width: 150px;padding: 4px;">
+				{% for SList in SlList %}
+				<option value="">{{ SList }}</option>
+				{% endfor %}
+			</select>
+
+			<label for="SL5" class="labelAD">Survey Language 5</label>
+			<select id="sl5name" name="sl5name" class="form-input" style="width: 150px;padding: 4px;">
+				{% for SList in SlList %}
+				<option value="">{{ SList }}</option>
+				{% endfor %}
+			</select>
+
+			<label for="SL6" class="labelAD">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSurvey Language 6</label>
+			<select id="sl6name" name="sl6name" class="form-input" style="width: 150px;padding: 4px;">
+				{% for SList in SlList %}
+				<option value="">{{ SList }}</option>
+				{% endfor %}
+			</select>
+
+			<label for="SL7" class="labelAD">Survey Language 7</label>
+			<select id="sl7name" name="sl7name" class="form-input" style="width: 150px;padding: 4px;">
+				{% for SList in SlList %}
+				<option value="">{{ SList }}</option>
+				{% endfor %}
+			</select>
+
+			<label for="SL8" class="labelAD">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSurvey Language 8</label>
+			<select id="sl8name" name="sl8name" class="form-input" style="width: 150px;padding: 4px;">
+				{% for SList in SlList %}
+				<option value="">{{ SList }}</option>
+				{% endfor %}
+			</select>
+
+	</fieldset>
+       <br>
+
+<fieldset class="FS1"><legend class="legend" style="font-style:italic;font-weight:bold;color:white;margin-left:1%">Other Information</legend>
+
+		<label for="ENL" class="labelAD">**English Link for Live</label>
+		<select id="sl8name" name="sl8name" class="form-input" style="width: 150px;padding: 4px;">
+			<option value="Yes">Yes</option>
+			<option value="No">No</option>
+		</select>
+
+		<label for="SD" class="labelAD">Survey Director for Web (CAWI ONLY)</label>
+		<select id="sl8name" name="sl8name" class="form-input" style="width: 150px;padding: 4px;;margin-top:14px">
+			<option value="Yes">Yes</option>
+			<option value="No">No</option>
+		</select>
+
+
+		<label for="ENL" class="labelAD">Quota</label>
+		<select id="quota" name="quota" class="form-input" style="width: 150px;padding: 4px;">
+			<option value="NA">NA</option>
+			<option value="US">US</option>
+		</select>
+
+
+</fieldset>
+		<br>
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="submit">	 </form>
+
+	   <div class="input-group mb-3 group-end"><center>
+            <a data-toggle="pill" href="#qdb" class="btn btn-success btnNext" style="margin-left:1340px">Next >></a></center>
+       </div>
+    </div>

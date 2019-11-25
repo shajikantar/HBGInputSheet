@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Forms Tutorial</title>
+</head>
+<body>
+<h2>Django Forms Tutorial</h2>
+
+<form action="/NewTry/" method="POST">
+    {% csrf_token %}
+<div>
+    <h1 name="hh1"> methodology </h1> {{ form.pd_Plat_methodology }}
+
+    <label  class="labelAD" style="font-size:14px">Country Name</label>
+			<select id="cname" name="cname" style="width: 250px;padding: 4px;" required>
+                {% for cntry in CountryList %}
+					<option id = {{cntry}} value={{ form.pd_country }} {{ cntry }}</option>
+				{% endfor %}
+	        </select>
+
+    <input type="submit" value="Submit"/>
+</div>
+</form>
+</body>
+</html>

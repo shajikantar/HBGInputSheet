@@ -1,0 +1,65 @@
+{% extends 'MainPageBanner.html' %}
+{% load static %}
+{% block content %}
+
+
+<head>
+<title>HBG - Contacts/Champions</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<body>
+
+		<!-- Destinations -->
+		<div class="container">
+			<div class="row destination_sorting_row">
+				<div class="col">
+					<div class="destination_sorting d-flex flex-row align-items-start justify-content-start">
+						<div class="sorting">
+							<ul class="item_sorting">
+								<img src="../../static/img/banner_HBG_Champions.png" style="height:80; width:800"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+								<li>
+									<span class="sorting_text">Sort By</span>
+									<i class="fa fa-chevron-down" aria-hidden="true"></i>
+									<ul>
+										<li class="product_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'><span>Show All</span></li>
+										<li class="product_sorting_btn" data-isotope-option='{ "sortBy": "name" }'><span>Name</span></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row destinations_row" >
+				<div class="col">
+					<div class="destinations_container item_grid" >
+						{% for cnt in contact_list %}
+						<!-- Destination -->
+						<div class="destination item">
+							<div class="destination_image">
+								<img src="../../static/img/{{ cnt.ImgName }}" height=300 width=900 alt="" >
+								<div class="spec_offer text-center"><a href="#">Linkedin</a></div>
+							</div>
+							<div class="destination_content">
+								<div class="destination_title"><a href="#">{{ cnt.name }}</a></div>
+								<div class="destination_subtitle"><a href="#">{{ cnt.place }}</a></div>
+								<br>
+								<div class="destination_subtitle"><p>{{ cnt.passion }}</p></div>
+								<div class="destination_price">{{ cnt.mailid }}</div>
+							</div>
+						</div>
+						{% endfor %}
+
+
+		</div>
+		</div>
+			</div>
+		</div>
+
+<script src="../../static/js/isotope.pkgd.min.js"></script>
+<script src="../../static/js/parallax.min.js"></script>
+</body>
+{% endblock %}
