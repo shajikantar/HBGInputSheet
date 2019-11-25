@@ -1,0 +1,96 @@
+body{
+	color: white;
+	font-family: sans-serif;
+}
+
+h3{
+	background: white;
+	color: #111;
+	padding: 1px;
+}
+
+ul{
+	background: white;
+	color: black;
+	padding: 10px;
+}
+
+.formstyle{
+	background: #0061a5;
+	width: 1000px;
+}
+
+label{
+	font-family: sans-serif;
+	font-size: 13px;
+  padding: 10px 1px;
+	margin: 10px;
+	font-weight: bold;
+}
+
+select{
+	font-family: sans-serif;
+	font-size: 12px;
+  padding: 1px 1px;
+	margin: 5px;
+	width: 20%;
+	border-radius: 10px;
+	}
+
+.legend{
+	font-size: 28;
+	font-weight: bold;
+}
+
+.FS1{
+		width: 1000px;
+		padding: 20px;
+		margin: 0px 10px 10px 30px;
+		border-radius: 10px;
+}
+
+
+input{
+	font-family: sans-serif;
+	font-size: 12px;
+  padding: 1px 10px;
+	margin: 5px;
+	width: 20%;
+	border-radius: 10px;
+}
+
+.example_f {
+   border-radius: 10px;
+   background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
+   border: 1px;
+   color: Black;
+   text-align: center;
+	 align: center
+	 font-size: 10px;
+   padding: 5px;
+   width: 200px;
+   transition: all 0.4s;
+   cursor: cursor;
+   margin: 10px;
+	 position: relative;
+ }
+ .example_f span {
+   cursor: pointer;
+   display: inline-block;
+   transition: 0.4s;
+ }
+ .example_f span:after {
+   content: '\00bb';
+   position: absolute;
+   opacity: 0;
+   top: 0;
+   right: -20px;
+   transition: 0.5s;
+ }
+ .example_f:hover span {
+   padding-right: 25px;
+ }
+ .example_f:hover span:after {
+   opacity: 1;
+   right: 0;
+ }
