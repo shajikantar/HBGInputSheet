@@ -12,29 +12,8 @@ from django.utils.translation import gettext
 def Project(request):
    form = Form()
    menu = {}
-   loop_times = range(1, 41)
-   menulist = {1: ['Project Info', 'ProjectSettings', 'Project Level Replacement'],
-               2: ['Qdb',"",""],
-               3: ['Additional Setting',"",""],
-               4: ['Brands',"",""],
-               5: ['Comms', 'Comms AMP', 'Comms_BrandFluency'],
-               6: ['Adnow', 'Ad Messaging', 'Adnow Ads', 'Adnow FMCG', 'Adnow Long term', 'Adnow other'],
-               7: ['CrossMedia', 'CrossMedia A Regions', 'CrossMedia B Campaign Builder', 'CrossMedia C Campaign'],
-               8: ['Det', 'Det Apps', 'Det DP'],
-               9: ['NeedScope', 'NeedScope Attributes', 'NeedScope Collages', 'NeedScope DP'],
-               10: ['Quota', 'Quota A Variables', 'Quota A Variables', 'Quota C Tables', 'Quota D Main'],
-               11: ['AgeBands',"",""],
-               12: ['IA_TARGET_WORDS',"",""],
-               13: ['Imagery',"",""],
-               14: ['TBCA',"",""],
-               15: ['Connect Filter Variables',"",""],
-               16: ['COMPETITOR BRANDS',"",""],
-               17: ['Brands SelfCoding',"",""],
-               18: ['Market Factors',"",""]}
-
    if request.method == 'POST':
       for i in range(1,19):
-         print(i)
          print(request.POST.get("Val_"+str(i)))
          if request.POST.get("Val_"+str(i)) != "on":
             #del menulist[i]
@@ -43,17 +22,13 @@ def Project(request):
          else:
             menulist[i][0]  = ""
             menulist[i][1] = ""
-
-      print(menulist[1][0])
-      print(menulist[1][1])
-      print(menulist[1][2])
-      print(menulist)
       return render(request, 'InputSheet.html', {'CountryList': CountryList, 'SlList': SlList, 'PlatformVal': PlatformVal,
                                            'Methodology': Methodology,
                                            'CategoryInForm': CategoryInForm, 'CategoryInDB': CategoryInDB,
-                                           'brandno': brandno, 'loop_times': loop_times, 'agebands': agebands,
+                                            'loop_times': loop_times, 'agebands': agebands,
                                            'adfmcg': adfmcg, 'media': media, 'adother': adother, 'Numbers': Numbers,
-                                           'adlongterm': adlongterm, 'form': form, 'menulist':menulist,'Val': request.POST})
+                                           'adlongterm': adlongterm, 'form': form, 'menulist':menulist,
+                                            'PosNeg' : PosNeg, 'ns_collage':ns_collage, 'marketfactor':marketfactor,'Val': request.POST})
 
    return render(request,'PrameterPage.html', {'proj_sel' : proj_sel, 'Val' : request.POST})
 
@@ -93,7 +68,7 @@ def MainPage(request):
    print(output)
    print("Shaji")
    return render(request,'InputSheet.html',{'CountryList': CountryList, 'SlList': SlList, 'PlatformVal': PlatformVal, 'Methodology': Methodology,
-                     'CategoryInForm': CategoryInForm, 'CategoryInDB': CategoryInDB,'brandno' : brandno,'loop_times': loop_times, 'agebands' : agebands,'adfmcg' : adfmcg,'media' : media,'adother' : adother,'Numbers' : Numbers, 'adlongterm' : adlongterm,'form' : form, 'Val' : request.POST})
+                     'CategoryInForm': CategoryInForm, 'CategoryInDB': CategoryInDB,'loop_times': loop_times, 'agebands' : agebands,'adfmcg' : adfmcg,'media' : media,'adother' : adother,'Numbers' : Numbers, 'adlongterm' : adlongterm,'form' : form, 'Val' : request.POST})
 
 def WriteToExcel(p):
    print('Writing out to Excel')
