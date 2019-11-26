@@ -1,8 +1,8 @@
  <div id="brands" class="tab-pane fade" style="width:1530px;margin-left:1%;">
+    <div style="background-color:white;width:1450px;margin-left:40px;height:1000px;padding: 10px;border: 2px solid #305A72;box-shadow: 1px 1px 10px black">
        <p style="margin-left:40px">Minimum 2 - Maximum 32 brands (To remain mobile friendly recommend no more than 8)
                                     Brand names cannot exceed 50 characters (in any language)
                                     Need minimum of 3 brands to conduct the NeedScope Module</p>
-    <div style="background-color:white;width:1450px;margin-left:40px;height:590px;padding: 10px;border: 2px solid #305A72;box-shadow: 1px 1px 10px black">
           <table style="width:1390px;margin-left:-.5px">
 			<thead>
 				  <center><tr>
@@ -19,7 +19,8 @@
                     <th style="width:155px" colspan="1"><input style="background-color:#AED6F1;border:0px;width:160px;font-size:14px" disabled type="text" id="br_lang2b" ></center></th>
   				  </tr></center>
 			</thead>
-               {% for i in brandno %}
+               {% for i in loop_times %}
+                 {% if i <= 32 %}
     			  <tr>
                       <td><input type="text" name="Sn_No_{{ i}}" class="BoxField_{{ i}}"  value = {{ i }} style="width:50px"  DISABLED /></td>
                       <td><input type="text" style="width:135px" id="Brand_{{ i}}" name="Brand_{{ i}}" class="BrandField"  placeholder="Type Brands"></td>
@@ -33,6 +34,7 @@
                       <td><input type="text" style="width:115px" name="media_ENU_{{ i}}" class="BoxField_{{ i}}">  </td>
                       <td><input type="text" style="width:155px" name="media_SPA_{{ i}}" class="BoxField_{{ i}}">  </td>
                   </tr>
+                 {% endif %}
                {% endfor %}
            </table>
  </div>

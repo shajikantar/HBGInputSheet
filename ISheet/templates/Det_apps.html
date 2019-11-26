@@ -1,7 +1,7 @@
 
  <div id="Det_Apps" class="tab-pane fade" style="margin-left:1%;margin-top:3%;">
-     <div style="background-color:white;width:720px;margin-left:20%;height:1150px;padding: 10px;border:2px solid #305A72;box-shadow: 1px 1px 15px black">
-	    <h4 style="color:black;font-weight:BOLD"><center>Apps - Maximum 32 , 8 Recommended</h4>
+     <div style="background-color:white;width:720px;margin-left:20%;height:950px;padding: 10px;border:2px solid #305A72;box-shadow: 1px 1px 15px black">
+	    <h4 style="color:black;font-weight:BOLD"><center>DET Apps - Maximum 32 , 8 Recommended</h4>
         <table style="width:550px;margin-left:40px;border:1px">
 			<thead>
             	  <tr>
@@ -12,11 +12,13 @@
 			</thead>
 
                {% for i in loop_times %}
+			   {% if i <= 32 %}
     			  <tr>
                       <td><input type="text" name="Sn_No_{{ i}}" class="BoxField_{{ i }}"  value = {{ i }} style="width:50px" DISABLED</td>
                       <td><input type="text" style="width:250px" id="DET_type_{{ i }}" name="Brand_{{ i }}" class="BrandField" </td>
                       <td><input type="text" style="width:250px" name="DET_Eng_{{ i }}" class="BoxField"  placeholder=""</td>
                   </tr>
+			     {% endif %}
                {% endfor %}
            </table><br>
 

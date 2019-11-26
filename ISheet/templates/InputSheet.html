@@ -9,21 +9,22 @@
 
 </head>
 <body style="background-color:#D7DBDD">
-    <form id="mainform" action="/MainPage/" method="POST">
+  <form id="mainform" action="/MainPage/" method="POST">
 
             <table style="background-color:#2f353d;width:100%;margin-left:0%">
                 <tr><td style="border:5px;">
                     <h1 style="font-size:25px;font-weight:bold;color:white"> &nbsp&nbsp&nbsp&nbspHBG </h1> <br> <h2 style="margin-top:-10%;font-size:25px;font-weight:bold;color:#82E0AA;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspInputsheet</h2></td>
                     <td style="border:0px;"><input type="Submit" value = "Generate and Save Excel File" class="btn btn-primary" style="margin-left:60%;background-color:#1ABC9C;width:220px"></td>
-                    <td style="border:0px;"><button class="btn" style="margin-left:40%;background-color:#1ABC9C;width:190px;color:white"  onclick="window.location.href = 'http://localhost:8000/'"><i class="fa fa-home"></i>      Back to Home Page</button></td>
+                    <td style="border:0px;"><button class="btn" style="margin-left:40%;background-color:#1ABC9C;width:190px;color:white"  onclick="window.location.href = 'http://shajikantar1.pythonanywhere.com'"><i class="fa fa-home"></i>      Back to Home Page</button></td>
+
 
              <tr><td style="border:0px;"></td>
             </tr></table>
 
         <div class="navbarX" style="width:100%;padding:5px">
             <div class="subnavX">
-                    <button class="subnavbtn" > Project Info &nbsp&nbsp  <i class="fa fa-caret-down"></i></button>
-                    <div class="subnav-content" style="margin-left:5px">
+                    <button class="subnavbtn" >Project Info&nbsp<i class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content" style="border-radius:10px;margin-left:5px">
                     <a data-toggle="pill" href="#ProjectSettings"">Project Settings</a>
                     <a data-toggle="pill" href="#ProjectTextReplacement"">Project Level Replacement</a>
                     {{ value.3 }}</div>
@@ -35,18 +36,20 @@
               <a data-toggle="pill" href="#additional_Project_Settings{{ value.0 }}" style="text-decoration: {{ value.1 }}">Additional Settings</a>
         {% elif key == 2 %}
               <a data-toggle="pill" href="#brands{{ value.0 }}" style="text-decoration: {{ value.1 }}">Brands</a>
+                          <a data-toggle="pill" href="#CategoryEntryPoint{{ value.0 }}" style="text-decoration: {{ value.1 }}">Category Entry</a>
+
         {% elif key == 3 %}
               <div class="subnavX">
-                <button class="subnavbtn" style="text-decoration: {{ value.1 }}">Comms&nbsp&nbsp<i class="fa fa-caret-down"></i></button>
-                <div class="subnav-content" style="margin-left:20%">
+                <button class="subnavbtn" style="text-decoration: {{ value.1 }}">Comms&nbsp<i class="fa fa-caret-down"></i></button>
+                <div class="subnav-content" style="border-radius:10px;margin-left:30%">
                   <a data-toggle="pill" href="#Comms_Amp{{ value.0 }}" style="text-decoration: {{ value.1 }}">Comms AMP</a>
-                  <a data-toggle="pill" href="#Comms_brand_fluency{{ value.0 }}" style="text-decoration: {{ value.1 }}">Comms_BrandFluency</a>
+                  <a data-toggle="pill" href="#Comms_brand_fluency{{ value.0 }}" style="text-decoration: {{ value.1 }}">Comms Brand Fluency</a>
                 </div>
               </div>
         {% elif key == 4 %}
              <div class="subnavX">
-                <button class="subnavbtn" style="text-decoration: {{ value.1 }}">Adnow &nbsp&nbsp <i class="fa fa-caret-down"></i></button>
-                <div class="subnav-content" style="margin-left:20%">
+                <button class="subnavbtn" style="text-decoration: {{ value.1 }}">Adnow&nbsp<i class="fa fa-caret-down"></i></button>
+                <div class="subnav-content" style="border-radius:10px;margin-left:23%">
                   <a data-toggle="pill" href="#AdMessaging{{ value.0 }}" style="text-decoration: {{ value.1 }}">Ad Messaging</a>
                   <a data-toggle="pill" href="#adnow_ads{{ value.0 }}" style="text-decoration: {{ value.1 }}">Adnow Ads</a>
                   <a data-toggle="pill" href="#adnow_fmcg{{ value.0 }}" style="text-decoration: {{ value.1 }}">Adnow FMCG</a>
@@ -59,8 +62,8 @@
         {% elif key == 5 %}
 
                   <div class="subnavX">
-                    <button class="subnavbtn" style="text-decoration: {{ value.1 }}">CrossMedia&nbsp&nbsp<i class="fa fa-caret-down"></i></button>
-                    <div class="subnav-content" style="margin-left:25%">
+                    <button class="subnavbtn" style="text-decoration: {{ value.1 }}">CrossMedia&nbsp<i class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content" style="margin-left:28%">
                       <a data-toggle="pill" href="#crossmedia_regions{{ value.0 }}" style="text-decoration: {{ value.1 }}">CrossMedia A Regions</a>
                       <a data-toggle="pill" href="#crossmedia_b{{ value.0 }}" style="text-decoration: {{ value.1 }}">CrossMedia B Campaign Builder</a>
                       <a data-toggle="pill" href="#crossmedia_C{{ value.0 }}" style="text-decoration: {{ value.1 }}">CrossMedia C Campaign</a>
@@ -68,19 +71,19 @@
                   </div>
         {% elif key == 6 %}
                   <div class="subnavX">
-                    <button class="subnavbtn" style="text-decoration: {{ value.1 }}">Det&nbsp&nbsp<i class="fa fa-caret-down"></i></button>
-                    <div class="subnav-content" style="margin-left:45%">
+                    <button class="subnavbtn" style="text-decoration: {{ value.1 }}">Det&nbsp<i class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content" style="border-radius:10px;margin-left:49%">
                       <a data-toggle="pill" href="#Det_Apps{{ value.0 }}" style="text-decoration: {{ value.1 }}">Det Apps</a>
-                      <a data-toggle="pill" href="#Det_DP{{ value.0 }}" style="text-decoration: {{ value.1 }}">>Det DP</a>
+                      <a data-toggle="pill" href="#Det_DP{{ value.0 }}" style="text-decoration: {{ value.1 }}">Det DP</a>
                     </div>
                   </div>
           {% elif key == 7 %}
 
                   <div class="subnavX">
-                    <button class="subnavbtn" style="text-decoration: {{ value.1 }}">NeedScope&nbsp&nbsp<i class="fa fa-caret-down"></i></button>
-                    <div class="subnav-content" style="margin-left:43%">
+                    <button class="subnavbtn" style="text-decoration: {{ value.1 }}">NeedScope&nbsp<i class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content" style="border-radius:10px;margin-left:46%">
                       <a data-toggle="pill" href="#link1{{ value.0 }}" style="text-decoration: {{ value.1 }}">NeedScope Attributes</a>
-                      <a data-toggle="pill" href="#link2{{ value.0 }}" style="text-decoration: {{ value.1 }}">NeedScope Collages</a>
+                      <a data-toggle="pill" href="#ns_collage{{ value.0 }}" style="text-decoration: {{ value.1 }}">NeedScope Collages</a>
                       <a data-toggle="pill" href="#Needscope_DP{{ value.0 }}" style="text-decoration: {{ value.1 }}">NeedScope DP</a>
                     </div>
                   </div>
@@ -89,10 +92,9 @@
 
 
                   <div class="subnavX">
-                    <button class="subnavbtn" style="text-decoration: {{ value.1 }}">Quota&nbsp&nbsp<i class="fa fa-caret-down"></i></button>
-                    <div class="subnav-content" style="margin-left:50%">
+                    <button class="subnavbtn" style="text-decoration: {{ value.1 }}">Quota&nbsp<i class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content" style="border-radius:10px;margin-left:58%">
                       <a data-toggle="pill" href="#link1{{ value.0 }}" style="text-decoration: {{ value.1 }}">Quota A Variables</a>
-                      <a data-toggle="pill" href="#link2{{ value.0 }}" style="text-decoration: {{ value.1 }}">Quota A Variables</a>
                       <a data-toggle="pill" href="#link2{{ value.0 }}" style="text-decoration: {{ value.1 }}">Quota C Tables</a>
                       <a data-toggle="pill" href="#link2{{ value.0 }}" style="text-decoration: {{ value.1 }}">Quota D Main</a>
                     </div>
@@ -100,23 +102,23 @@
         {% elif key == 9 %}
 					<a data-toggle="pill" href="#agebands{{ value.0 }}" style="text-decoration: {{ value.1 }}">AgeBands</a>
          {% elif key == 10 %}
-        			<a data-toggle="pill" href="#menu2{{ value.0 }}" style="text-decoration: {{ value.1 }}">IA_TARGET_WORDS</a>
+        			<a data-toggle="pill" href="#menu2{{ value.0 }}" style="text-decoration: {{ value.1 }}">IA Target Words</a>
         {% elif key == 11 %}
 					<a data-toggle="pill" href="#Imagery{{ value.0 }}" style="text-decoration: {{ value.1 }}">Imagery</a>
          {% elif key == 12 %}
                     <a data-toggle="pill" href="#menu2{{ value.0 }}" style="text-decoration: {{ value.1 }}">TBCA</a>
 
               <div class="subnavX">
-                <button class="subnavbtn">Others&nbsp&nbsp<i class="fa fa-caret-down"></i></button>
-                <div class="subnav-content" style="margin-left:60%">
+                <button class="subnavbtn">Others&nbsp<i class="fa fa-caret-down"></i></button>
+                <div class="subnav-content" style=";border-radius:10px;margin-left:70%">
          {% elif key == 13 %}
-                  <a data-toggle="pill" href="#menu2{{ value.0 }}" style="text-decoration: {{ value.1 }}" >ConnectFilterVariables</a>
+                  <a data-toggle="pill" href="#menu2{{ value.0 }}" style="text-decoration: {{ value.1 }}" >Connect Filter Variables</a>
          {% elif key == 14 %}
-                  <a data-toggle="pill" href="#menu2{{ value.0 }}" style="text-decoration: {{ value.1 }}">COMPETITOR_BRANDS</a>
+                  <a data-toggle="pill" href="#menu2{{ value.0 }}" style="text-decoration: {{ value.1 }}">Competitor Brands</a>
          {% elif key == 15 %}
-                  <a data-toggle="pill"  href="#menu2{{ value.0 }}" style="text-decoration: {{ value.1 }}">Brands_SelfCoding</a>
+                  <a data-toggle="pill" href="#Brands_self_Coding{{ value.0 }}" style="text-decoration: {{ value.1 }}">Brands Self Coding</a>
          {% elif key == 16 %}
-                  <a data-toggle="pill"  href="#menu2{{ value.0 }}" style="text-decoration: {{ value.1 }}">MarketFactors</a>
+                  <a data-toggle="pill"  href="#marketfactor{{ value.0 }}" style="text-decoration: {{ value.1 }}">Market Factors</a>
 
                 </div>
               </div>
@@ -127,23 +129,28 @@
             <div class="tab-content">
 			  {% include "Project_Settings_V1.html" %}
 			  {% include "ProjectTextReplacement.html" %}
- 			  {% include "Qdb_tabs_v1.html" %}
+ 	          {% include "Imagery.html" %}
+              {% include "market_factor.html" %}
+      		  {% include "Qdb_tabs_V1.html" %}
 			  {% include "additional_project_settings.html" %}
       		  {% include "brands.html" %}
 		      {% include "Comms_AMP.html" %}
-              {% include "Comms_brand_fluency.html" %}
+              {% include "Comms_Brand_Fluency.html" %}
               {% include "Needscope_DP.html" %}
               {% include "CrossMedia_Regions.html" %}
-              {% include "CrossMedia_B.html" %}
-              {% include "CrossMedia_C.html" %}
+              {% include "Crossmedia_B.html" %}
+              {% include "Crossmedia_C.html" %}
+              {% include "needscope_collage.html" %}
               {% include "adnow_fmcg.html" %}
               {% include "adnow_longterm.html" %}
               {% include "adnow_other.html" %}
  	          {% include "AdMessaging.html" %}
               {% include "adnow_ads.html" %}
               {% include "agebands.html" %}
-              {% include "Det_Apps.html" %}
-              {% include "Det_DP.html" %}
+              {% include "Brands_SelfCoding.html" %}
+              {% include "CategoryEntryPoints.html" %}
+              {% include "Det_apps.html" %}
+              {% include "Det_Dp.html" %}
 
                 <div id="menu2" class="tab-pane fade" style="width:1000px;margin-top:3%;margin-left:240px;">
                         <h1>Not Developed Yet</h1>
@@ -161,7 +168,7 @@ body {
 
 .navbarX {
   overflow: hidden;
-  background-color: #008000;
+  background-color: #175C8B;
   border-radius:0px;
 }
 
@@ -171,7 +178,7 @@ body {
   color: white;
   text-align: center;
   padding: 8px 14px;
-  text-decoration: none;border-radius:10px;
+  text-decoration: none;border-radius:5px;
 
 }
 
@@ -180,17 +187,17 @@ body {
   font-size: 12px;
   overflow: hidden;
   margin-left:1%;
-  background-color: #008000;
+  background-color: #175C8B;
   width:max-content;border-radius:10px;
 }
 
 .subnavX .subnavbtn {
-  font-size: 16px;
+  font-size: 13px;
   border: none;
  font-size: 12px;
    outline: none;
   color: white;
-  padding: 8px 15px;
+  padding: 8px 15px 8px 15px;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
@@ -199,28 +206,34 @@ body {
 .navbarX a:hover, .subnav:hover .subnavbtn {
   background-color: white;
   color:black;
-  border-radius:10px;
+  border-radius:5px;
 }
 
 .subnav-content {
   display: none;
+  padding: 4px 4px 4px 4px;
   position: absolute;
   margin-top:.5px;
   left: 0;
-  background-color: #008000;
+  box-shadow: 1px 1px 1px 1px Black;
+  background-color: #A0CDEB;
   width:fit-content;
   z-index: 1;
 }
 
 .subnav-content a {
   float: left;
-  color: white;
+  font-size: 11px;
+  font-weight:bold;
+  color: black;
   text-decoration: none;
 }
 
 .subnav-content a:hover {
-  background-color: #F5B041;
+  font-size:12px;
+  font-weight:bold;
   color: black;
+  border: 1px solid black;
 }
 
 .subnavX:hover .subnav-content {

@@ -1,19 +1,19 @@
 
  <div id="crossmedia_b" class="tab-pane fade" style="margin-left:8%;margin-top:3%;">
-     <div style="background-color:white;width:1120px;margin-left:8%;height:350px;padding: 10px;border:2px solid #305A72;box-shadow: 1px 1px 15px black">
-	    <h4 style="color:black;font-weight:BOLD"><center>CrossMedia Campaign wave builderList each touchpoint <br> name you are measuring and select which question block to use to capture opportunities to see.  Touchpoints: minimum 1 and maximum 5x</h4>
-        <table style="width:550px;margin-left:40px;border:1px">
+     <div style="background-color:white;width:800px;margin-left:8%;height:350px;padding: 10px;border:2px solid #305A72;box-shadow: 1px 1px 15px black">
+	    <h5 style="color:black;font-weight:BOLD">CrossMedia Campaign wave builderList each touchpoint <br> name you are measuring and select which question block to use to capture opportunities to see.  Touchpoints: minimum 1 and maximum 5x</h5>
+        <table style="width:650px;margin-left:40px;border:1px">
 			<thead>
             	  <tr>
 					<th style="width:50px;height:40px;font-size:14px"> &nbspIndex</th>
-					<th style="width:250px;font-size:14px"><center>Type in - <br>English Default</th>
-    				<th style="width:250px;font-size:14px"><center>Question block (select)</th>
+					<th style="width:300px;font-size:14px"><center>Type in - <br>English Default</th>
+    				<th style="width:300px;font-size:14px"><center>Question block (select)</th>
          		  </tr>
 			</thead>
                {% for i in "12345" %}
     			  <tr>
                       <td><input type="text" name="Sn_No_{{ i}}" class="BoxField_{{ i }}"  value = {{ i }} style="width:50px" disabled</td>
-                      <td><input type="text" style="width:250px" id="CMB_type_{{ i }}" name="Brand_{{ i }}" class="BrandField" </td>
+                      <td><input type="text" style="width:300px" id="CMB_type_{{ i }}" name="Brand_{{ i }}" class="BrandField" </td>
                       <td>
                       <select title="Country-select" name="CMB_type_{{ i }}" class="form-input" style="width: 250px;padding: 4px;" required>
 							{% for m in media %}

@@ -1,32 +1,31 @@
 
- <div id="ProjectTextReplacement" class="tab-pane fade" style="margin-top:1%;margin-left:5%">
-     <div style="background-color:white;width:1200px;margin-left:5%;height:900px;padding: 10px;border:2px solid #305A72;box-shadow: 1px 1px 15px black">
-	    <h3 style="margin-left:10%">Project Level Text Replacements</h3>
-        <table style="margin-left:2%">
+ <div id="Brands_self_Coding" class="tab-pane fade" style="margin-top:1%;margin-left:15%">
+     <div style="background-color:white;width:800px;margin-left:5%;height:750px;padding: 10px;border:2px solid #305A72;box-shadow: 1px 1px 15px black">
+	    <h3 style="margin-left:10%">Self Coding Brand list</h3>
+         <p>&nbsp&nbsp&nbsp&nbsp&nbspAny additional brands that you want to appear in the self coding list (Maximum 20 brands combined with the above list of Primary brands)</p>
+        <table style="width:650px;margin-left:2%">
 			<thead>
             	  <tr>
 					<th style="width:50px;height:40px;font-size:14px"> &nbspIndex</th>
-					<th style="width:440px;font-size:14px" colspan="2"><center>Standard Labels and it's attributes (if any)</th>
-					<th style="width:600px;font-size:14px" colspan="2"><center>Label to be shown in the script for each language</th>
+					<th style="width:200px;font-size:14px" colspan="1"><center>Standard Labels and it's attributes (if any)</th>
+					<th style="width:400px;font-size:14px" colspan="2"><center>Label to be shown in the script for each language</th>
          		  </tr>
 				  <tr>
 					<th style="width:50px;height:40px;font-size:14px"> &nbsp#</th>
-					<th style="width:440px;font-size:13px" colspan="1"><center> &nbsp &nbsp &nbspProperty Label</th>
 					<th style="width:200px;font-size:13px" colspan="1"><center>Type in English Default</th>
                     <th style="width:200px;font-size:13px" colspan="1"><center>English (United Kingdom)</th>
                     <th style="width:200px;font-size:13px" colspan="1"><center><input style="background-color:#AED6F1;border:0px;width:160px;font-size:14px" disabled type="text" id="ptr_lang2" ></center></th>
          		  </tr>
 			</thead>
                {% for i in loop_times %}
-    			   {% if i <= 28 %}
-					<tr>
+    			  <tr>
+                      {%if i <= 20 %}
                       <td><input type="text" name="Sn_No_{{ i}}" class="BoxField_{{ i}}"  value = {{ i }} style="width:50px" DISABLED</td>
-                      <td><input type="text" style="width:440px" id="Brand_{{ i}}" name="Brand_{{ i}}" class="BrandField" </td>
-                      <td><input type="text" style="width:200px" name="Q00_58_{{ i}}" class="BoxField"  placeholder=""</td>
-                      <td><input type="text" style="width:200px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""</td>
-                      <td><input type="text" style="width:200px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""</td>
+                      <td><input type="text" style="width:200px" name="BSC_label_{{ i}}" class="BoxField"  placeholder=""</td>
+                      <td><input type="text" style="width:200px" name="BSC_Eng_{{ i}}" class="BoxField"  placeholder=""</td>
+                      <td><input type="text" style="width:200px" name="BSC_local_{{ i}}" class="BoxField"  placeholder=""</td>
+                      {% endif %}
                   </tr>
-			     {% endif %}
                {% endfor %}
            </table><br>
 
